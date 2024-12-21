@@ -11,15 +11,15 @@ const guess = document.querySelector(".guess");
 const body = document.querySelector("body");
 
 // Variables and Game States
-let secretNumber = Math.trunc(Math.random() * 20 + 1);
+let secretNumber = Math.trunc(Math.random() * 50 + 1);
 let scoreState = 20;
 let highScoreState = 0;
 
 check.addEventListener("click", function () {
   const guessValue = Number(guess.value);
 
-  // When there is no input or the input is less than 1 or more than 20
-  if (!guessValue || guessValue < 1 || guessValue > 20) {
+  // When there is no input or the input is less than 1 or more than 50
+  if (!guessValue || guessValue < 1 || guessValue > 50) {
     message.textContent = "⛔ No Number!";
 
     // When player wins
@@ -56,7 +56,7 @@ check.addEventListener("click", function () {
 
 again.addEventListener("click", function () {
   scoreState = 20;
-  secretNumber = Math.trunc(Math.random() * 20 + 1);
+  secretNumber = Math.trunc(Math.random() * 50 + 1);
   message.textContent = "Start guessing...";
   number.textContent = "?";
   guess.value = "";
